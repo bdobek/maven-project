@@ -21,8 +21,7 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
         <db:select config-ref="Derby_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[SELECT * FROM FLIGHTS]]></db:parameterized-query>
         </db:select>
-        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
-        <jms:outbound-endpoint doc:name="JMS"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
     </flow>
     <flow name="maven-projectFlow1">
         <jms:inbound-endpoint doc:name="JMS"/>
